@@ -16,6 +16,9 @@ class TechList extends Component {
 
     this.setState({ techs: [...this.state.techs, this.state.newTech], newTech: '' })
   }
+  handleDelete = tech => {
+    this.setState({ techs: this.state.techs.filter(techs => techs !== tech) })
+  }
 
   render() {
     return (
@@ -23,7 +26,12 @@ class TechList extends Component {
         {/* <h1>{this.state.newTech}</h1> */}
 
         <ul>
-          {this.state.techs.map((tech, index) => <li key={index}>{tech}</li>)}
+          {this.state.techs.map((tech, index) => (
+            <li key={index}>
+              {tech}
+              <button type="button" onClick={() => this.handleDelete(tech)}>-</button>
+            </li>
+          ))}
         </ul>
 
         <input 
