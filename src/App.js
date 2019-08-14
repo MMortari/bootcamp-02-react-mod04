@@ -2,11 +2,14 @@ import React from 'react';
 
 // Style
 import './App.css';
-// Images
-import pinguins from './assets/Penguins.jpg';
+
+// Components
+import TechList from './components/TechList';
 
 function App() {
-  return <img width="200" src={pinguins} />
+  return (
+    <TechList />
+  )
 }
 
 export default App;
